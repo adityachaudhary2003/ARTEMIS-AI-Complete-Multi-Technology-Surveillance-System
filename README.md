@@ -1,7 +1,9 @@
 # ARTEMIS-AI — Complete Multi-Technology Surveillance & Intelligence System
 
 ARTEMIS-AI is a full-scale AI-powered surveillance and intelligence system designed to demonstrate how modern security, monitoring, and analysis platforms are built using multiple technologies working together.
+
 The project combines computer vision, artificial intelligence, backend services, system orchestration, and configuration-driven design into a single modular architecture. It focuses on real-world system thinking, not just isolated AI models.
+
 ARTEMIS-AI is built as a learning-oriented yet production-inspired project, suitable for academic evaluation, portfolio demonstration, and advanced system design practice.
 
 --- 
