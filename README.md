@@ -82,7 +82,9 @@ ARTEMIS-AI is built as a learning-oriented yet production-inspired project, suit
 ---
 
 
-📁 Project Structure
+## 📁 Project Structure
+
+```
 ARTEMIS-AI-Complete-Multi-Technology-Surveillance-System/
 │
 ├── backend/
@@ -115,56 +117,75 @@ ARTEMIS-AI-Complete-Multi-Technology-Surveillance-System/
 │
 ├── .gitignore
 ├── README.md
-
+```
 
 This structure is intentionally modular so that each part can evolve independently.
 
-⚙️ Installation & Setup
-1️⃣ Clone the Repository
+---
+
+
+## ⚙️ Installation & Setup
+
+
+### 1️⃣ Clone the Repository
+```bash
 git clone https://github.com/arshdeepsarsh/ARTEMIS-AI-Complete-Multi-Technology-Surveillance-System.git
 cd ARTEMIS-AI-Complete-Multi-Technology-Surveillance-System
+```
+---
 
-2️⃣ Create a Virtual Environment
+### 2️⃣ Create a Virtual Environment
+```bash
 python -m venv venv
+```
+---
 
 
 Activate it:
 
-Windows
-
+**Windows**
+```bash
 venv\Scripts\activate
+```
 
-
-Mac / Linux
-
+**Mac / Linux**
+```bash
 source venv/bin/activate
+```
+---
 
-3️⃣ Install Backend Dependencies
+
+### 3️⃣ Install Backend Dependencies
+```bash
 pip install -r backend/requirements.txt
-
+```
 
 Additional dependencies for vision or frontend components can be installed as required.
 
-▶️ Running the System
+### ▶️ Running the System
 🔹 Local Execution (Basic Mode)
+```bash
 python backend/main.py
-
+```
 
 This starts the backend intelligence layer for development and testing.
 
 🔹 Docker Execution (Recommended)
+```bash
 docker-compose up --build
-
+```
 
 Docker ensures:
+- Consistent environment
+- Easier service orchestration
+- Better scalability
 
-Consistent environment
+---
 
-Easier service orchestration
 
-Better scalability
+## 🔄 How ARTEMIS-AI Works (Flow)
 
-🔄 How ARTEMIS-AI Works (Flow)
+```
 Input Source (Camera / Video / Stream)
                 ↓
 Frame Processing & Preprocessing
@@ -176,62 +197,60 @@ AI Inference & Analysis
 Backend Intelligence & Rules Engine
                 ↓
 Alerts / Logs / Dashboard Visualization
-
+```
 
 Each step is loosely coupled, making the system easy to debug, extend, and optimize.
 
-🧩 Technologies Used
+---
 
-Python – Core language
 
-Computer Vision – OpenCV & AI models
+## 🧩 Technologies Used
 
-Backend APIs – Service orchestration
+- Python – Core language
+- Computer Vision – OpenCV & AI models
+- Backend APIs – Service orchestration
+- Docker & Docker Compose – Deployment
+- JSON Configurations – System control
+- Modular AI Design Principles
 
-Docker & Docker Compose – Deployment
+---
 
-JSON Configurations – System control
 
-Modular AI Design Principles
+## 📊 Design Philosophy
 
-📊 Design Philosophy
+- Separation of Concerns
+- Config-first approach
+- Replaceable components
+- Real-world inspired architecture
+- Learning-focused but production-ready mindset
 
-Separation of Concerns
+---
 
-Config-first approach
 
-Replaceable components
+## 🛣️ Future Roadmap
 
-Real-world inspired architecture
+- Real-time camera stream integration
+- Advanced object detection & tracking models
+- Alert and notification system (email / webhook)
+- Role-based access dashboard
+- Performance optimization & profiling
+- Cloud-native deployment support
+- Integration with IoT devices
 
-Learning-focused but production-ready mindset
+---
 
-🛣️ Future Roadmap
 
-Real-time camera stream integration
-
-Advanced object detection & tracking models
-
-Alert and notification system (email / webhook)
-
-Role-based access dashboard
-
-Performance optimization & profiling
-
-Cloud-native deployment support
-
-Integration with IoT devices
-
-🤝 Contributing
+## 🤝 Contributing
 
 Contributions are welcome and appreciated.
 
-Open an issue for feature discussions
+- Open an issue for feature discussions
+- Submit pull requests for improvements
+- Suggest optimizations or new modules
 
-Submit pull requests for improvements
+---
 
-Suggest optimizations or new modules
 
-⭐ Support
+## ⭐ Support
 
 If you find this project helpful or insightful, consider giving it a ⭐ on GitHub — it really helps and motivates further development.
