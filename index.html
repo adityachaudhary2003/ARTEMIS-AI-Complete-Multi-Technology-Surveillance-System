@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTEMIS AI Surveillance Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    <span class="logo-text">ARTEMIS AI</span>
+                </div>
+                <div class="system-status">
+                    <span class="status-dot status-online"></span>
+                    <span>System Online</span>
+                </div>
+            </div>
+            <div class="header-center">
+                <h1>Threat Detection Dashboard</h1>
+                <div class="current-time" id="currentTime"></div>
+            </div>
+            <div class="header-right">
+                <div class="user-info">
+                    <span>Sarah Chen - Security Admin</span>
+                    <div class="user-avatar"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <button class="nav-btn active" data-section="live">Live View</button>
+            <button class="nav-btn" data-section="threats">Threats</button>
+            <button class="nav-btn" data-section="analytics">Analytics</button>
+            <button class="nav-btn" data-section="settings">Settings</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Live View Section -->
+            <section id="live-section" class="content-section active">
+                <div class="main-grid">
+                    <!-- Video Wall -->
+                    <div class="video-wall">
+                        <div class="section-header">
+                            <h2>Live Video Feeds</h2>
+                            <div class="controls">
+                                <select id="gridLayout" class="form-control">
+                                    <option value="2x2">2x2 Grid</option>
+                                    <option value="3x3" selected>3x3 Grid</option>
+                                    <option value="4x4">4x4 Grid</option>
+                                    <option value="6x6">6x6 Grid</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="video-grid" id="videoGrid"></div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="sidebar">
+                        <!-- Active Threats -->
+                        <div class="threats-panel">
+                            <h3>Active Threats</h3>
+                            <div class="threat-list" id="threatList"></div>
+                        </div>
+
+                        <!-- System Metrics -->
+                        <div class="metrics-panel">
+                            <h3>System Status</h3>
+                            <div class="metric-grid" id="metricsGrid"></div>
+                        </div>
+
+                        <!-- Camera Controls -->
+                        <div class="controls-panel">
+                            <h3>Camera Control</h3>
+                            <div class="camera-select">
+                                <select id="selectedCamera" class="form-control">
+                                    <option value="">Select Camera</option>
+                                </select>
+                            </div>
+                            <div class="ptz-controls">
+                                <div class="ptz-grid">
+                                    <button class="ptz-btn" data-direction="up-left">↖</button>
+                                    <button class="ptz-btn" data-direction="up">↑</button>
+                                    <button class="ptz-btn" data-direction="up-right">↗</button>
+                                    <button class="ptz-btn" data-direction="left">←</button>
+                                    <button class="ptz-btn center" data-direction="center">⌂</button>
+                                    <button class="ptz-btn" data-direction="right">→</button>
+                                    <button class="ptz-btn" data-direction="down-left">↙</button>
+                                    <button class="ptz-btn" data-direction="down">↓</button>
+                                    <button class="ptz-btn" data-direction="down-right">↘</button>
+                                </div>
+                                <div class="zoom-controls">
+                                    <button class="btn btn--secondary">Zoom In</button>
+                                    <button class="btn btn--secondary">Zoom Out</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Threats Section -->
+            <section id="threats-section" class="content-section">
+                <div class="threats-grid">
+                    <div class="threat-overview">
+                        <h2>Threat Detection Center</h2>
+                        <div class="threat-stats">
+                            <div class="stat-card critical">
+                                <div class="stat-number" id="criticalCount">0</div>
+                                <div class="stat-label">Critical</div>
+                            </div>
+                            <div class="stat-card high">
+                                <div class="stat-number" id="highCount">0</div>
+                                <div class="stat-label">High</div>
+                            </div>
+                            <div class="stat-card medium">
+                                <div class="stat-number" id="mediumCount">0</div>
+                                <div class="stat-label">Medium</div>
+                            </div>
+                            <div class="stat-card low">
+                                <div class="stat-number" id="lowCount">0</div>
+                                <div class="stat-label">Low</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="threat-filters">
+                        <input type="text" id="threatSearch" class="form-control" placeholder="Search threats...">
+                        <select id="severityFilter" class="form-control">
+                            <option value="">All Severities</option>
+                            <option value="Critical">Critical</option>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                        <select id="statusFilter" class="form-control">
+                            <option value="">All Statuses</option>
+                            <option value="Active">Active</option>
+                            <option value="Under Review">Under Review</option>
+                            <option value="Resolved">Resolved</option>
+                            <option value="Dismissed">Dismissed</option>
+                        </select>
+                    </div>
+                    <div class="threat-table-container">
+                        <table class="threat-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Type</th>
+                                    <th>Severity</th>
+                                    <th>Location</th>
+                                    <th>Time</th>
+                                    <th>Confidence</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="threatTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analytics Section -->
+            <section id="analytics-section" class="content-section">
+                <div class="analytics-grid">
+                    <div class="chart-container">
+                        <h3>Threat Trends (24 Hours)</h3>
+                        <canvas id="threatTrendsChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>System Performance</h3>
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Detection Accuracy</h3>
+                        <canvas id="accuracyChart"></canvas>
+                    </div>
+                    <div class="map-container">
+                        <h3>Incident Heat Map</h3>
+                        <div class="facility-map" id="facilityMap"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings-section" class="content-section">
+                <div class="settings-grid">
+                    <div class="settings-panel">
+                        <h3>AI Configuration</h3>
+                        <div class="form-group">
+                            <label class="form-label">Detection Sensitivity</label>
+                            <input type="range" id="sensitivity" min="1" max="10" value="7" class="slider">
+                            <span id="sensitivityValue">7</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Alert Threshold</label>
+                            <input type="range" id="threshold" min="50" max="95" value="75" class="slider">
+                            <span id="thresholdValue">75%</span>
+                        </div>
+                    </div>
+                    <div class="settings-panel">
+                        <h3>Service Status</h3>
+                        <div class="service-list" id="serviceList"></div>
+                    </div>
+                    <div class="settings-panel">
+                        <h3>User Management</h3>
+                        <div class="user-list" id="userList"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for threat details -->
+    <div class="modal hidden" id="threatModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Threat Details</h3>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body" id="threatModalBody"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

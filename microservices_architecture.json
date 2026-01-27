@@ -1,0 +1,116 @@
+{
+  "core_services": {
+    "video_ingestion_service": {
+      "language": "C++",
+      "purpose": "High-performance video stream processing and codec handling",
+      "key_features": [
+        "Multi-protocol video stream ingestion (RTSP, WebRTC, HLS)",
+        "Real-time frame extraction and preprocessing",
+        "Hardware-accelerated video decoding",
+        "Stream quality adaptation and error recovery"
+      ]
+    },
+    "computer_vision_service": {
+      "language": "C++ with Python bindings",
+      "purpose": "Real-time object detection, tracking, and recognition",
+      "key_features": [
+        "YOLO-based object detection with custom training",
+        "Multi-object tracking across video frames",
+        "Face detection and recognition pipelines",
+        "Behavioral analysis and anomaly detection"
+      ]
+    },
+    "ai_inference_service": {
+      "language": "Python",
+      "purpose": "ML model serving and prediction orchestration",
+      "key_features": [
+        "Multi-model inference with load balancing",
+        "Real-time threat scoring and classification",
+        "Behavioral pattern analysis using transformers",
+        "Continuous learning and model updates"
+      ]
+    },
+    "threat_intelligence_service": {
+      "language": "Java",
+      "purpose": "Threat correlation and intelligence processing",
+      "key_features": [
+        "Multi-source intelligence aggregation",
+        "Pattern matching against known threat indicators",
+        "Risk assessment and threat prioritization",
+        "Integration with external threat feeds"
+      ]
+    },
+    "event_processing_service": {
+      "language": "Node.js",
+      "purpose": "Real-time event streaming and notification",
+      "key_features": [
+        "High-throughput event processing with Kafka",
+        "WebSocket connections for real-time updates",
+        "Alert routing and escalation logic",
+        "Integration with external notification systems"
+      ]
+    },
+    "vector_search_service": {
+      "language": "Python with FastAPI",
+      "purpose": "Semantic search and similarity matching",
+      "key_features": [
+        "Face embedding storage and similarity search",
+        "Behavioral pattern clustering and analysis",
+        "Historical incident correlation",
+        "Real-time similarity queries for threat detection"
+      ]
+    },
+    "api_gateway_service": {
+      "language": "Node.js",
+      "purpose": "Request routing, authentication, and rate limiting",
+      "key_features": [
+        "Dynamic request routing and load balancing",
+        "JWT-based authentication and authorization",
+        "API rate limiting and throttling",
+        "Request/response logging and monitoring"
+      ]
+    },
+    "configuration_service": {
+      "language": "Java",
+      "purpose": "System configuration and user management",
+      "key_features": [
+        "Centralized configuration management",
+        "User and role-based access control",
+        "Camera and sensor registration",
+        "System health monitoring and alerting"
+      ]
+    }
+  },
+  "frontend_applications": {
+    "surveillance_dashboard": {
+      "language": "React",
+      "purpose": "Real-time monitoring and threat visualization",
+      "key_features": [
+        "Live video wall with intelligent layout",
+        "Interactive threat timeline and incident mapping",
+        "Real-time alerts and notification center",
+        "Advanced search and filtering capabilities"
+      ]
+    },
+    "investigation_interface": {
+      "language": "React",
+      "purpose": "Forensic analysis and case management",
+      "key_features": [
+        "Video playback with AI-enhanced search",
+        "Incident reconstruction and timeline analysis",
+        "Evidence collection and case documentation",
+        "Collaborative investigation tools"
+      ]
+    },
+    "mobile_app": {
+      "language": "React Native",
+      "purpose": "Field operations and mobile alerting",
+      "key_features": [
+        "Live camera feeds and remote monitoring",
+        "Mobile alert management and response",
+        "Field reporting and incident documentation",
+        "Offline capability with sync when connected"
+      ]
+    }
+  }
+}
